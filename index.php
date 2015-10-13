@@ -1,5 +1,5 @@
 <?php
-// FIXME: What?
+
 #error_reporting(-1);
 #ini_set('display_errors', 1);
 #error_reporting(E_ALL);
@@ -54,8 +54,6 @@ header('Content-Type: application/json;charset=UTF-8');
  */
 function connect_database()
 {
-	// FIXME: Use the freaking defines for host and database!
-	global $host, $database, $username, $pwd;
 	$host = HOST;
 	$database = DATABASE;
 	try {
@@ -580,6 +578,7 @@ function handle_get_thumb($pic)
  * Get an image of suitable size fo the swipe activity of the Android app
  *
  * FIXME: Yeah, this really is an ugly hack. Find a better and more permanent solution.
+ *        Cache images in multiple sizes
  *
  */
 function handle_get_swipe_image($pic)
